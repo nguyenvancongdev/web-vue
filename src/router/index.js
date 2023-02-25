@@ -25,14 +25,14 @@ import * as VueRouter from 'vue-router'
       children: [
         {
           path: 'posts',
-          component: HelloWorld,
+          component: HelloWorld, name: 'toi'
         },
       ],
     },
     {
       path: '/login', component: LoginAdmin,
     },
-    {path: '/', redirect: '/user/posts'},
+    {path: '/', redirect: '/user/posts', name:'home'},
     { path: '/:pathMatch(.*)*',  redirect: '/404' },
     { path: '/404',name: 'NotFound', component: NotFound },
     
