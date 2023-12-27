@@ -1,10 +1,10 @@
 <template>
-    <div class="">
-      <div>page not found</div>
-     <v-btn>  <router-link to="/">back to home</router-link></v-btn>
-    </div>
-
- </template>
+  <a-result status="404" title="404" sub-title="Sorry, the page you visited does not exist.">
+    <template #extra>
+      <a-button type="primary">Back Home</a-button>
+    </template>
+  </a-result>
+</template>
  
  <script>
  import { defineComponent } from 'vue';
