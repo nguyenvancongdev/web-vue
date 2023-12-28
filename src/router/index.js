@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import UserScreen from '@/views/user/index'
 import NotFound from '@/views/404/index'
 import LoginAdmin from '@/views/login/index'
+import PostesBlog from '@/components/user/PostesBlog'
 
 import * as VueRouter from 'vue-router'
 
@@ -16,6 +17,10 @@ import * as VueRouter from 'vue-router'
         {
           path: 'posts',
           component: HelloWorld,
+        },
+        {
+          path: 'edit',
+          component: PostesBlog,
         },
       ],
     },
