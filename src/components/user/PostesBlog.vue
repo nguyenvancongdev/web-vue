@@ -1,14 +1,29 @@
 <template>
 
       <div> đây là danh sách bài viết</div>
-      <md-editor language="my-lang" v-model="text" />
+      <md-editor language="my-lang" :toolbars="toolbars" v-model="text" >
+        <template #defToolbars>
+          <emoji-toi>
+            <template #trigger> 😆 </template>
+          </emoji-toi>
+          <export-pdf :modelValue="text" />
+        </template>
+      </md-editor>
 
 
    </template>
    
    <script>
-   import { MdEditor, config } from 'md-editor-v3';
+/* eslint-disable */
+
+
+   import { MdEditor, config, NormalToolbar } from 'md-editor-v3';
    import 'md-editor-v3/lib/style.css';
+   import '@vavt/v3-extension/lib/asset/ExportPDF.css';
+   import '@vavt/v3-extension/lib/asset/Emoji.css';
+   import { ExportPDF } from '@vavt/v3-extension';
+   import { Emoji } from '@vavt/v3-extension';
+   import { Mark } from '@vavt/v3-extension';
 
   config({
   editorConfig: {
@@ -101,12 +116,42 @@
    export default {
      name: 'PostesBlog',
      components: {
-      MdEditor
+      MdEditor,
+      'export-pdf': ExportPDF,
+      'emoji-toi': Emoji,
+      NormalToolbar,
      },
      data() {
        return {
          count: 0,
          text: '',
+         toolbars: ['bold','underline','italic','strikeThrough','title','sub','sup',
+         'quote',
+          'unorderedList',
+          'orderedList',
+          'task',
+          'codeRow',
+          'code',
+          'link',
+          'image',
+          'table',
+          'mermaid',
+           'katex',
+           0,
+         1,
+           'revoke',
+            'next',
+          'save',
+          'prettier',
+          'pageFullscreen',
+          'fullscreen',
+          'preview',
+          'htmlPreview',
+          'catalog',
+      
+         
+        
+        ],
        }
      },
      methods:{
@@ -167,3 +212,30 @@ stateDiagram-v2
 ```` -->
 
  
+// code tinh nag pdf va 
+
+<!-- 
+```mermaid
+flowchart TD
+Nguyễn-Văn-Ới --> Nguyễn-Thị-Toàn
+Nguyễn-Văn-Ới --> Nguyễn-Văn-Kinh&Phạm-Thị-Ất
+Nguyễn-Văn-Ới --> Nguyễn-Văn-Giám
+Nguyễn-Văn-Kinh&Phạm-Thị-Ất ---> Nguyễn-Văn-Khánh
+Nguyễn-Văn-Kinh&Phạm-Thị-Ất ---> Nguyễn-Thị-Hòa
+Nguyễn-Văn-Kinh&Phạm-Thị-Ất ---> Nguyễn-Thị-Bình
+Nguyễn-Văn-Kinh&Phạm-Thị-Ất ---> Nguyễn-Văn-Thắng
+Nguyễn-Văn-Kinh&Phạm-Thị-Ất ---> Nguyễn-Thị-Lợi
+Nguyễn-Văn-Kinh&Phạm-Thị-Ất ---> Nguyễn-Thị-Vinh
+Nguyễn-Văn-Kinh&Phạm-Thị-Ất ---> Nguyễn-Văn-Quang
+Nguyễn-Văn-Kinh&Phạm-Thị-Ất ---> Nguyễn-Văn-Minh
+Nguyễn-Văn-Khánh --> Nguyễn-Thị-Thiết
+Nguyễn-Văn-Khánh --> Nguyễn-Thị-Lập
+Nguyễn-Văn-Khánh --> Nguyễn-Văn-Danh
+Nguyễn-Văn-Danh --> Nguyễn-Thị-Trâm-Anh
+Nguyễn-Văn-Danh --> Nguyễn-Thị-Gạo
+Nguyễn-Văn-Danh --> Nguyễn-Thị-Nếp
+Nguyễn-Văn-Thắng --> Nguyễn-Thị-Thành
+Nguyễn-Văn-Thắng --> Nguyễn-Văn-Công
+Nguyễn-Văn-Công --> Nguyễn-Thị-Ngọc-Diệp
+Nguyễn-Văn-Quang --> Nguyễn-Thị-Diệu-An
+Nguyễn-Văn-Quang --> Nguyễn-Thị-Hoài-Phương -->

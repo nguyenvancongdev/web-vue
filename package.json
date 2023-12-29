@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@mdi/font": "5.9.55",
+    "@vavt/v3-extension": "^1.1.1",
     "ant-design-vue": "^4.0.8",
     "core-js": "^3.8.3",
     "firebase": "^9.10.0",
