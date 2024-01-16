@@ -11,11 +11,11 @@ import * as VueRouter from 'vue-router'
 
   const routes = [ 
     {
-      path: '/user', 
+      path: '', 
       component: UserScreen, 
       children: [
         {
-          path: 'posts',
+          path: '/posts',
           component: HelloWorld,
         },
         {

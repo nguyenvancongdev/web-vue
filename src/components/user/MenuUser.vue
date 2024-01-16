@@ -4,7 +4,7 @@
    <div>
     <div>nguyenvancong.dev</div>
     <router-link to="/">Trang Chủ</router-link> 
-    <router-link to="/user/posts">Bài Đăng</router-link> 
+    <router-link to="/posts">Bài Đăng</router-link> 
     <router-link to="/login">Login</router-link> 
    
    
