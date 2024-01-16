@@ -1,7 +1,7 @@
 <template>
-     <a-layout>
+     <a-layout class="container">
       <a-layout-header class="headerStyle">Header</a-layout-header>
-      <a-layout>
+      <a-layout class="main">
           <a-layout-sider class="siderStyle">Sider</a-layout-sider>
           <a-layout-content>Content</a-layout-content>
       </a-layout>
@@ -25,17 +25,33 @@
 <style scoped>
 .headerStyle {
   background: linear-gradient(315deg,#5c33c8,#9238d4);
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 .siderStyle {
-  background: linear-gradient(315deg,#564949b3,#65b014); ;
+  background: linear-gradient(315deg,#564949b3,#65b014); 
 }
 .footerStyle {
-  position: fixed;
-  left: 0;
-  bottom: 0;
+ 
   width: 100%;
   /* color: white; */
   text-align: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.main {
+  flex-grow: 1;
+  flex-shrink: 1;
+  height: 1000px;
 }
 </style>
  
