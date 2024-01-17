@@ -1,6 +1,12 @@
 <template>
      <a-layout class="container">
-      <a-layout-header class="headerStyle">Header</a-layout-header>
+      <a-layout-header class="headerStyle">
+        <div class="routing">trang chu</div>
+        <div class="routing">dang nhap</div>
+        <div class="routing">login</div>
+
+
+      </a-layout-header>
       <a-layout class="main">
           <a-layout-sider class="siderStyle">Sider</a-layout-sider>
           <a-layout-content>Content</a-layout-content>
@@ -27,6 +33,8 @@
   background: linear-gradient(315deg,#5c33c8,#9238d4);
   flex-grow: 0;
   flex-shrink: 0;
+  display: flex;
+  gap: 20px;
 }
 .siderStyle {
   background: linear-gradient(315deg,#564949b3,#65b014); 
