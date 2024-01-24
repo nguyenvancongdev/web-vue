@@ -17,10 +17,12 @@ import * as VueRouter from 'vue-router'
         {
           path: '/posts',
           component: HelloWorld,
+          
         },
         {
           path: 'edit',
           component: PostesBlog,
+          name: 'post'
         },
       ],
     },
@@ -35,7 +37,9 @@ import * as VueRouter from 'vue-router'
       ],
     },
     {
-      path: '/login', component: LoginAdmin,
+      path: '/login',
+      component: LoginAdmin,
+      name: 'login',
     },
     {path: '/', redirect: '/user/posts', name:'home'},
     { path: '/:pathMatch(.*)*',  redirect: '/404' },

@@ -3,13 +3,15 @@
       <a-layout-header class="headerStyle">
         <div class="routing">trang chu</div>
         <div class="routing">dang nhap</div>
-        <div class="routing">login</div>
-
+        <router-link :to="{ name: 'login' }">Dang nhap</router-link>
+        <router-link :to="{ name: 'post' }">Bai viet</router-link>
 
       </a-layout-header>
       <a-layout class="main">
           <a-layout-sider class="siderStyle">Sider</a-layout-sider>
-          <a-layout-content>Content</a-layout-content>
+          <a-layout-content>
+            <router-view></router-view>
+          </a-layout-content>
       </a-layout>
       <a-layout-footer class="footerStyle">
         <div>Sản phẩm được tạo bởi: cocode.pro, liên hệ khi có sự cố: 0988755277</div>

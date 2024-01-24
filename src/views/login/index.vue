@@ -1,22 +1,16 @@
 <template>
-    <v-form>
-        <v-text-field
-            prepend-icon="person"
-                name="login"
-                label="Login"
-                type="text"
-        ></v-text-field>
-        <v-text-field
-            id="password"
-            prepend-icon="lock"
-            name="password"
-            label="Password"
-            type="password"
-        ></v-text-field>
-        <v-btn>login</v-btn>
-        <v-btn  @click="backtoHome()">Back to home</v-btn>
-        <v-btn  @click="backtologin()">Back to home</v-btn>
-    </v-form>
+    <Form>
+    <Form.Item label="Username">
+      <Input v-model="username" />
+    </Form.Item>
+    <Form.Item label="Password">
+      <Input type="password" v-model="password" />
+    </Form.Item>
+    <Form.Item>
+      <Button type="primary" @click="login">Login</Button>
+    </Form.Item>
+  </Form>
+  <div></div>
  </template>
  
  <script>
@@ -26,7 +20,8 @@
    name: 'LoginAdmin',
    data(){
     return {
-
+      username: '',
+      password: ''
     }
    },
    methods: {
