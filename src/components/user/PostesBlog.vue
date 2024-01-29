@@ -1,15 +1,21 @@
 <template>
 
       <div> đây là danh sách bài viết</div>
-      <md-editor language="my-lang" :toolbars="toolbars" v-model="text" >
-        <template #defToolbars>
-          <emoji-toi>
-            <template #trigger> 😆 </template>
-          </emoji-toi>
-          <export-pdf :modelValue="text" />
-        </template>
-      </md-editor>
+      <div>
 
+        <md-editor language="my-lang" :toolbars="toolbars" v-model="text" >
+          <template #defToolbars>
+            <emoji-toi>
+              <template #trigger> 😆 </template>
+            </emoji-toi>
+            <export-pdf :modelValue="text" />
+          </template>
+        </md-editor>
+      </div>
+      <div class="preview-only">
+        <md-preview editorId="preview-only" :modelValue="text" />
+        <md-catalog editorId="preview-only" :scrollElement="scrollElement" />
+      </div>
 
    </template>
    
@@ -18,6 +24,9 @@
 
 
    import { MdEditor, config, NormalToolbar } from 'md-editor-v3';
+   import VueMarkdown from 'vue-markdown-render';
+   import { MdPreview, MdCatalog } from 'md-editor-v3';
+   import 'md-editor-v3/lib/preview.css';
    import 'md-editor-v3/lib/style.css';
    import '@vavt/v3-extension/lib/asset/ExportPDF.css';
    import '@vavt/v3-extension/lib/asset/Emoji.css';
@@ -117,6 +126,8 @@
      name: 'PostesBlog',
      components: {
       MdEditor,
+      VueMarkdown,
+      MdPreview, MdCatalog,
       'export-pdf': ExportPDF,
       'emoji-toi': Emoji,
       NormalToolbar,
@@ -152,11 +163,15 @@
          
         
         ],
+        scrollElement: document.documentElement,
        }
      },
      methods:{
        setTralet(){
       
+       },
+       scrollElement(){
+        document.documentElement
        }
      },
      create(){
@@ -164,6 +179,11 @@
    
    }
    </script>
+   <style>
+  .preview-only {
+    display: flex;
+  }
+  </style>
 
 <!-- wer**werwe** tiếo tu
 
