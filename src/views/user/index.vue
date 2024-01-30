@@ -2,10 +2,9 @@
      <a-layout class="container">
       <a-layout-header class="headerStyle">
         <div class="routing">trang chu</div>
-        <div class="routing">dang nhap</div>
         <router-link :to="{ name: 'login' }">Dang nhap</router-link>
         <router-link :to="{ name: 'post' }">Bai viet</router-link>
-
+        <router-link :to="{ name: 'sanpham' }">Bảng sản phẩm</router-link>
       </a-layout-header>
       <a-layout class="main">
           <a-layout-sider class="siderStyle">Sider</a-layout-sider>

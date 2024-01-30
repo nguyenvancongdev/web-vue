@@ -24,6 +24,11 @@ import * as VueRouter from 'vue-router'
           component: PostesBlog,
           name: 'post'
         },
+        {
+          path: 'sanpham',
+          component: PostesBlog,
+          name: 'post'
+        },
       ],
     },
     {
