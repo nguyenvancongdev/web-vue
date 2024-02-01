@@ -5,7 +5,7 @@ import UserScreen from '@/views/user/index'
 import NotFound from '@/views/404/index'
 import LoginAdmin from '@/views/login/index'
 import PostesBlog from '@/components/user/PostesBlog'
-
+import CategoryUser from '@/components/user/category'
 import * as VueRouter from 'vue-router'
 
 
@@ -26,8 +26,8 @@ import * as VueRouter from 'vue-router'
         },
         {
           path: 'sanpham',
-          component: PostesBlog,
-          name: 'post'
+          component: CategoryUser,
+          name: 'sanpham'
         },
       ],
     },

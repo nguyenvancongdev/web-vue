@@ -7,7 +7,7 @@
     
     <script>
     export default {
-      name: 'MenuUser',
+      name: 'CategoryUser',
       data() {
         return {
           count: 0
@@ -18,7 +18,9 @@
         setTralet(){
        
         }
+        
       },
+      
     
     }
     </script>
