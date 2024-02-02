@@ -17,7 +17,10 @@
  
         setTralet(){
        
-        }
+        },
+        initApi(){
+          console.log('rrr');
+        },
         
       },
       
