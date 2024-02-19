@@ -1,12 +1,11 @@
 import db from '@/fb'
 import { collection, getDocs, 
          query,limit,doc,addDoc,
-         updateDoc,deleteDoc, writeBatch } from 'firebase/firestore/lite';
+         updateDoc,deleteDoc, writeBatch, startAt } from 'firebase/firestore/lite';
 // addDoc, updateDoc, doc, deleteDoc, query, orderBy, limit, limitToLast
     //get total
-const citiesCol = collection(db, 'hello');
+const citiesCol = collection(db, 'hellos');
 const batch = writeBatch(db);
-const documentRef = doc(db, 'hello');
 //get all
 export const getHellos = async () =>{
     let citySnapshot = await getDocs(citiesCol);
@@ -20,7 +19,7 @@ export const getHellolimit = async ({page,size}) => {
 }
 //them 1 row:
 export const create = async (value) => {
-    await addDoc(citiesCol, value).then(()=> {this.addvalue = null, this.conso() })
+    await addDoc(citiesCol, value).then(()=> {})
 }
 //update 1 row:
 export const update = async ({id, ...value}) => {
