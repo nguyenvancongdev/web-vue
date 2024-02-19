@@ -24,7 +24,6 @@
 
 
    import { MdEditor, config, NormalToolbar } from 'md-editor-v3';
-   import VueMarkdown from 'vue-markdown-render';
    import { MdPreview, MdCatalog } from 'md-editor-v3';
    import 'md-editor-v3/lib/preview.css';
    import 'md-editor-v3/lib/style.css';
@@ -126,7 +125,6 @@
      name: 'PostesBlog',
      components: {
       MdEditor,
-      VueMarkdown,
       MdPreview, MdCatalog,
       'export-pdf': ExportPDF,
       'emoji-toi': Emoji,
