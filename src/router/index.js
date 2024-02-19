@@ -6,6 +6,7 @@ import NotFound from '@/views/404/index'
 import LoginAdmin from '@/views/login/index'
 import PostesBlog from '@/components/user/PostesBlog'
 import CategoryUser from '@/components/user/category'
+import MoneyManage from '@/components/user/moneymanage'
 import * as VueRouter from 'vue-router'
 
 
@@ -29,6 +30,16 @@ import * as VueRouter from 'vue-router'
           component: CategoryUser,
           name: 'sanpham'
         },
+        {
+          path: 'thuchi',
+          component: MoneyManage,
+          name: 'thuchi'
+        },
+        {
+          path: 'thuchi:key',
+          component: MoneyManage,
+          name: 'thuchikey'
+        }
       ],
     },
     {

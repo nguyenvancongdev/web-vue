@@ -5,6 +5,8 @@
         <router-link :to="{ name: 'login' }">Dang nhap</router-link>
         <router-link :to="{ name: 'post' }">Bai viet</router-link>
         <router-link :to="{ name: 'sanpham' }">Bảng sản phẩm</router-link>
+        <router-link :to="{ name: 'thuchi' }">Thu chi</router-link>
+
       </a-layout-header>
       <a-layout class="main">
           <a-layout-sider class="siderStyle">Sider</a-layout-sider>
