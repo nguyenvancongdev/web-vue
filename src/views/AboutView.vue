@@ -1,8 +1,14 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+    <div>
+
       <p>Count: {{ count }}</p>
-      <p>Double Count: {{ doubleCount }}</p>
+      <!-- <p>Double Count: {{ doubleCount }}</p> -->
+    </div>
+    <div>
+     <button @click="increment">updat cout</button>
+    </div>
        <p>Count: {{ countss }}</p>
       <button @click="increments">Increment</button>
   </div>
@@ -24,8 +30,8 @@ import { ref, computed, watchEffect   } from 'vue'
 const counterStore = useCounterStore()
 
 const count = counterStore.count
-const doubleCount = counterStore.doubleCount
-const increment = counterStore.increment
+// const doubleCount = counterStore.doubleCount
+const increment = () => {counterStore.increment()}
 
 //
 const countss = ref(0)
