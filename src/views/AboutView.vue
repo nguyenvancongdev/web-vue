@@ -1,6 +1,10 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+      <p>Count: {{ count }}</p>
+      <p>Double Count: {{ doubleCount }}</p>
+       <p>Count: {{ countss }}</p>
+      <button @click="increments">Increment</button>
   </div>
 </template>
 
@@ -13,3 +17,28 @@
   }
 }
 </style>
+<script setup>
+import { useCounterStore } from '@/stores/counter'
+import { ref, computed, watchEffect   } from 'vue'
+
+const counterStore = useCounterStore()
+
+const count = counterStore.count
+const doubleCount = counterStore.doubleCount
+const increment = counterStore.increment
+
+//
+const countss = ref(0)
+const doubleCountw = computed(() => countss.value * 2)
+const increments = () => {
+  // countss.value++
+}
+function decrements() {
+  countss.value--
+}
+watchEffect(() => {
+  console.log(`Count is now: ${countss.value}`)
+})
+//
+
+</script>
