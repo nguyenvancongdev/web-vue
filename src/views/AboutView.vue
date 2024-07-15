@@ -19,6 +19,8 @@
     />
     <p>Greeeeeting: {{ greetingMessage }}</p>
     <p>Notifieeecation: {{ notificationMessage }}</p>
+
+     <v-btn color="primary">Primary Button</v-btn>
   </div>
 </template>
 
