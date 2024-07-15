@@ -4,20 +4,17 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
-// import vuetify from '@/plugins/vuetify';
-import { createVuetify } from 'vuetify'
-import * as components from 'vuetify/components'
-import * as directives from 'vuetify/directives'
+import Antd from 'ant-design-vue';
 import './index.css'
+import 'ant-design-vue/dist/reset.css';
 const app = createApp(App)
 const pinia = createPinia()
-const vuetify = createVuetify({
-    components,
-    directives,
-  })
+
 
 app.use(router)
 app.use(pinia)
-app.use(vuetify);
+app.use(Antd)
+
+
 
 app.mount('#app')
