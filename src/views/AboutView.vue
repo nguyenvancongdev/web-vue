@@ -3,7 +3,7 @@
     <h1>This is an about page</h1>
     <div>
 
-      <p>Count: {{ count }}</p>
+      <p>Count: {{ counterStore.count }}</p>
       <!-- <p>Double Count: {{ doubleCount }}</p> -->
     </div>
     <div>
@@ -29,8 +29,6 @@ import { ref, computed, watchEffect   } from 'vue'
 
 const counterStore = useCounterStore()
 
-const count = counterStore.count
-// const doubleCount = counterStore.doubleCount
 const increment = () => {counterStore.increment()}
 
 //
