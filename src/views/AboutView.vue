@@ -11,6 +11,14 @@
     </div>
        <p>Count: {{ countss }}</p>
       <button @click="increments">Increment</button>
+     <AboutChild
+      :message="parentMessage"
+      :number="parentNumber"
+      @greet="handleGreeting"
+      @notify="handleNotification"
+    />
+    <p>Greeeeeting: {{ greetingMessage }}</p>
+    <p>Notifieeecation: {{ notificationMessage }}</p>
   </div>
 </template>
 
@@ -26,6 +34,8 @@
 <script setup>
 import { useCounterStore } from '@/stores/counter'
 import { ref, computed, watchEffect   } from 'vue'
+
+import AboutChild from '@/components/AboutChild.vue';
 
 const counterStore = useCounterStore()
 
@@ -43,6 +53,20 @@ function decrements() {
 watchEffect(() => {
   console.log(`Count is now: ${countss.value}`)
 })
+
+
 //
+
+const greetingMessage = ref('');
+const notificationMessage = ref('');
+const parentMessage = ref('Hello from Parent!');
+const parentNumber = ref(42);
+const handleGreeting = (message) => {
+  greetingMessage.value = message;
+};
+const handleNotification = (message) => {
+  notificationMessage.value = message;
+};
+
 
 </script>
