@@ -1,6 +1,6 @@
 <template>
   <main>
-  rrr
+  xin chào mọi người
 
   </main>  
 </template>
