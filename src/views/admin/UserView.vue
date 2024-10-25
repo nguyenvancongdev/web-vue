@@ -1,6 +1,6 @@
 <template>
    <a-flex justify="end">
-      <a-button>Thêm mới</a-button>
+      <a-button @click="callChildMethod">Thêm mới</a-button>
    </a-flex>
    <a-table class="mt-4" :data-source="dataSource" :columns="columns"  :pagination="false" />
    <a-pagination
@@ -10,15 +10,24 @@
       v-model:page-size="pageSize"
       @change="handlePageChange"
     />
+    <createView ref="childRef" />
 </template>
 
 <!-- // milliSeconds -->
 <!-- // hiển thị ngày -->
  <script setup>
 import { ref, onMounted, reactive  } from 'vue';
+import createView from '@/components/admin/userView/createView.vue';
 const total = ref(1000);
 const pageSize = ref(20);
+const childRef = ref(null);
 const currentPage = ref(1);
+
+const callChildMethod = () => {
+  if (childRef.value) {
+    childRef.value.onOpen();
+  }
+}
 
 const handlePageChange = () => {
    console.log('4444')
@@ -58,5 +67,13 @@ const dataSource = ref([
   },
 ] )
 </script>
+
+<!-- M -->
+ <!-- tôi muốn tìm kiếm theo tên: 
+ // và tuổi:
+ //
+ // minh can truyen vao ă bien
+ page size, 
+ -->
 
 
