@@ -50,6 +50,8 @@
   import { ref, defineExpose, reactive, defineEmits } from 'vue';
   import dayjs from 'dayjs';
   import { addData } from '@/service/user.service';
+  import {addRow} from '@/service_supa/user';
+
   const emit = defineEmits(['customEvent'])
   const formState = reactive({
     fullname: '',
@@ -74,7 +76,12 @@ const onFinish = async (values) => {
       birthday: formState.birthday.valueOf(),
       adreff: formState.adreff,
     }
-    await addData(a);
+    // await addData(a);
+    let b = {
+      name: formState.full_name,
+      
+    }
+    await addRow(b)
     open.value = false;
 
   }  catch (error) {

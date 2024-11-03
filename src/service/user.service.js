@@ -121,11 +121,17 @@ const lastDocumentId = 'yourLastDocumentId';
         startAfter(lastDocumentId), // Bắt đầu sau ID của tài liệu cuối cùng
         limit(pageSize) // Giới hạn số lượng tài liệu trả về
         );
-        const querySnapshot = await getDocs(collection(db, 'users'));
+        const querySnapshot = await getDocs(q);
     const mapData =  querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     return mapData
     
 
 }
+// get user to limit
+
+
+// a = {
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 
 

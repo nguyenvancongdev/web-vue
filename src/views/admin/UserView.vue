@@ -18,10 +18,12 @@
  <script setup>
 import { ref, onMounted, reactive  } from 'vue';
 import createView from '@/components/admin/userView/createView.vue';
+import {getAll} from '@/service_supa/user';
 const total = ref(1000);
 const pageSize = ref(20);
 const childRef = ref(null);
 const currentPage = ref(1);
+
 
 const callChildMethod = () => {
   if (childRef.value) {
@@ -66,14 +68,12 @@ const dataSource = ref([
    
   },
 ] )
+onMounted(() => {
+  getAll()
+  console.log("Componegggggnt đã được gắn vào DOM");
+  // Thực hiện các logic cần thiết khi component đã mounted
+});
 </script>
 
-<!-- M -->
- <!-- tôi muốn tìm kiếm theo tên: 
- // và tuổi:
- //
- // minh can truyen vao ă bien
- page size, 
- -->
 
 
