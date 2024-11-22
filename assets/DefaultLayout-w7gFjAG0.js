@@ -1,0 +1,1 @@
+import{r as c,o as _,c as l,a as u,b as n}from"./index-DcICL1sa.js";const f=(e,o)=>{const t=e.__vccOpts||e;for(const[r,a]of o)t[r]=a;return t},d={name:"DefaultLayout"},p=n("header",null,"Default Header",-1),i=n("footer",null,"Default Footer",-1);function m(e,o,t,r,a,v){const s=c("router-view");return _(),l("div",null,[p,u(s),i])}const D=f(d,[["render",m]]);export{D as default};
