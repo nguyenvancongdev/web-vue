@@ -76,7 +76,6 @@ const onFinish = async (values) => {
       birthday: formState.birthday.valueOf(),
       adreff: formState.adreff,
     }
-    // await addData(a);
     let b = {
       name: formState.full_name,
       
